@@ -1,0 +1,146 @@
+:root {
+    --blue-color: #00C5CD;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+    --whitesmoke-color: #F5F5F5; 
+}
+
+* {
+    margin: 0;
+    outline: none;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Trebuchet, sans-serif;
+    letter-spacing: 0.7px;
+    color: var(--blue-color);
+    background-color: var(--whitesmoke-color);
+    margin: 0;
+    overflow-x: hidden;   
+}
+
+.navbar {
+    background-color: var(--white-color);
+    padding: 20px 40px;
+    box-shadow: 4px 6px 20px rgba(0,0,0,0.2);
+}
+
+.navbar-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.btn {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--blue-color);
+    color: var(--blue-color);
+    font-weight: bold;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+}
+
+.loader {
+    position: absolute;
+    left: 47%;
+    top: 50%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border: 7px solid var(--white-color);
+    border-radius: 50%;
+    border-top: 7px solid var(--blue-color);
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+
+.user-card-grid {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 70px;
+    column-gap: 90px;
+    margin: 100px;
+    animation: cardAnime 1s linear;
+}
+
+@keyframes cardAnime {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.user-card {
+    width: 200px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    border-bottom: 4px solid var(--blue-color);
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.user-card:hover {
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+}
+
+.user-card img {
+    width: 200px;
+    height: 210px;
+}
+
+.user-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    row-gap: 10px;
+}
+
+.user-mail-id {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-mail-id .iconify {
+    margin-right: 5px;
+    max-width: 20px;
+}
+
+@media (max-width: 500px) {
+    .navbar-menu {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 20px;
+    }
+}
